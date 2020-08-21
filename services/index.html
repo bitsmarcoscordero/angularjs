@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+	<html ng-app="todolist">
+		<head>
+			<meta charset="utf-8">
+			<title>Angular LocalStorage</title>
+			<script src="../angular.min.js"></script>
+			<script src="angular-local-storege.min.js"></script>			
+			<script src="controller.js"></script>
+		</head>
+		<body ng-controller="TodoControlador">
+			<ul>
+				<li ng-repeat="actividad in todo">
+					{{actividad.description}} - 
+					{{actividad.fecha | date: 'short'}}
+				</li>
+			</ul>
+			<form ng-submit="addactividad()">
+				<input type="text" ng-model="newAct.description">
+				<input type="datetime-local" ng-model="newAct.fecha">
+				<input type="submit" value="Agregar Actividad">
+			</form>
+			<button ng-click="limpiar()">Limpiar Almacen</button>
+		</body>
+	</html>

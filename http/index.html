@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+	<html ng-app="MiPrimerApp">
+		<head>
+			<meta charset="utf-8">
+			<title>Angular http</title>
+			<script src="../angular.min.js"></script>
+			<script src="controller.js"></script>
+		</head>
+		<body ng-controller="MiPrimerControlador">
+			<input type="text" ng-model="nuevo.titulo">
+			<textarea ng-model="nuevo.body"></textarea>
+			<button ng-click="addpost()">Adicionar</button>
+			<button ng-click="allpost()">Mostrar</button>
+			<ul ng-if="get">
+				<li ng-repeat="post in posts">
+					<h2>{{post.title}}</h2>
+					<p>{{post.body}}</p>
+				</li>
+			</ul>
+			<ul ng-if="post">
+				<li >
+					<h2>{{posts.id}}</h2>
+					<h2>{{posts.userId}}</h2>
+					<h2>{{posts.title}}</h2>
+					<h2>{{posts.body}}</h2>
+				</li>
+			</ul>
+		</body>
+	</html>
